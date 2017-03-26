@@ -1,0 +1,53 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#body {
+  background-color: #666666;
+  color: white;
+  height: 100%;
+  width: 100%; }
+
+.center {
+  text-align: center; }
+
+#app-content {
+  height: 100%; }
+  #app-content #map {
+    height: 200px;
+    width: 200px;
+    overflow: visible; }
+
+.app-container {
+  height: 100%; }
+  .app-container .red {
+    background-color: #C52C2F; }
+  .app-container .error {
+    display: none; }
+  .app-container .hidden {
+    display: none; }
+  .app-container .menu {
+    position: relative;
+    width: 60%;
+    margin: 0 auto; }
+    .app-container .menu #email {
+      display: none; }
+    .app-container .menu input {
+      display: block;
+      position: relative;
+      width: 100%;
+      border: 1px solid black;
+      background-color: #C52C2F; }
+      .app-container .menu input.btn-submit {
+        margin: 0 auto;
+        position: relative;
+        background-color: #0066cc; }
+  .app-container .profile {
+    height: 100%; }
+    .app-container .profile .tab-content {
+      height: 100%; }
+    .app-container .profile .tab-pane {
+      height: 100%;
+      width: 100%; }

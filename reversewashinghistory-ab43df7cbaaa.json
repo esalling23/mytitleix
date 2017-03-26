@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "carbon-minutia-139023",
+  "private_key_id": "ab43df7cbaaafac0fdd3785408008dfd06da66c2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5ET8zzo4efA5w\ns10uws2IKqolMI6QwoMShVPvRclju/E2Q5vHntwoBdCmpktvQAXUxNuNJwVz/owd\nilWX/V1W6Q9JBdvq3cBaDgTDU+igDDS60XrV2HJ2ZbGJ4gTm9pHsXG1bJxm8HQMh\nKhoHBRgYan6i3fSWgtbwn8QojZKGFhfFStj/YKfM0OgiadAn9vcVcbswe5RQs8vT\n2ndJ7BQ7FtJ+qXOTnI0vH2kV0a+5mDM9JytqRYXtQejl2uqKpsjVOvCxFP9ixf6Y\nfwGvumorWnjrnZepsNlyTNsdVWlFkSacSXzRPAI6nkBjZrTeKWn2GTcgA59kmzxJ\n7epSOuebAgMBAAECggEALx5zBw+6I4zWaF9ihDtY9ShXtaxNQBImKRsFKdCM2/XI\nDlbcXNDXoOEKJMQGRMb6NRgCBkg/HS9cIVFNRatejng8Sg1R1tSq2sLi95BvlABH\nlKEtMzEuw3JU55RCR0PUF2fY9/JWnQyN9W2wvsTPQ7gpkfINCh05+H3VBbY17ilW\nHD4I8BONEduPk5Q9wBLd7aPGyYy7eRZ2gFYtwW50Y6s7zOO3U41r0v7m89R2ghiH\nWazOf4HwQZLpTEJNtFinkbpRkyFvKCnnSjEwtH6Vjm4NceRQUj6Somwu7yMPbEG7\ngZJ+zL+y/OnphNIsnKIyUIN7cPPcHBtDBP+Jridq4QKBgQD3J07K9Vgxnwgm4yE6\nl/h8R9BbAknROvGN/0MSkKo4mp/dnA0JwzsqUK/HYZJAx9YMcjlZgxXonIWrX6GG\nOLIaIebbLpYNnfpzAMl56AwvyLzk3BcuoxH3LOvRSBA0ncpAProu8YbnE4IjAVYm\nVrwH5oBQkArdDR31v50qSIW3gwKBgQC/sQmRjQRspSMJfdI2zeACku+Ft8KLy2F4\nHlikdg4gczYBfp4wkW9rJbRtSK1e05Ro2mQ6eIAqKg4Xy5O6MiFr7OTk+bhR4OLA\nRrnARltRaeTMfXiRfXKXwQZQgnvgb+niO9ZsyN7fH+p19SuhDMzMCLJG/y7HML6d\ntfCqt4x8CQKBgEcRgYGw7OxP24s7EooDuwsZp1sUHF/SwDThqsrC2H+wTrntrn4Z\nKoEvdGwzrVd9XxpzGfSYUgtyPqmZtRugX+5Nw1FRYwqFW8gH+OdaB28SHOb+NphN\ngdP+kcy7GRXYLZktsGHhR7ZYkLo6HyilFip7aHhCAy2vIOdScwH+mpy7AoGBAI1e\nNrxMz1KAhtJdJEaelfHQAy0OVD9cgklft+ex2ME9tjpr8qXG2/CdIe7mhlVEnFKn\nnPsyGvL9iN8rl4rdpaA+WKA1OiXIP/GlNyABwx7LhZz5e41wgq5AADQnxsvCPS5H\nCt+3VAYhN3w+jyp6kh5222NYllr4K9uLbi24p7ZhAoGAE4y/HYJUIQb+7iioCiQI\n9a0LiIvC1OFrxhRfJpqAeIycUHNWehEAK4YGRyaMEhwsFzZ2ywoQ+djN0loLA3p8\nGdU6M4oupjD9evu4Mx+k7S6W9JwXAQPZgzyY3DSAk0vrzufKTeF6hD4p3MLo09F5\nr8SVO7h+HuO2PmJ9QW+mPKw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "analyze-reverse-washing-histor@carbon-minutia-139023.iam.gserviceaccount.com",
+  "client_id": "107915530826528081929",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/analyze-reverse-washing-histor%40carbon-minutia-139023.iam.gserviceaccount.com"
+}
