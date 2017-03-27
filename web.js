@@ -18,7 +18,7 @@ var coreHelpers = require(__dirname + '/templates/helpers');
 // var hbs = require('handlebars');
 keystone.init({
   
-  'name': 'My Title IX',
+  'name': 'MyTitleIX',
   
   'favicon': 'public/favicon.ico',
   'sass': 'public',
