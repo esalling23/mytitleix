@@ -1,7 +1,7 @@
 {
 	"name": "MyTitleIX",
 	// "directory": "",
-	// "database": "engagement-lab",
+	"database": "mytitleix",
 	// "allowed_domains": ["www.riskhorizon.org", "boston.communityplanit.org", "www.civicmediaproject.com", "civicmediaproject.com", "www.civicmediaproject.net", "civicmediaproject.net"],
 	"admin_nav": { 
 									
