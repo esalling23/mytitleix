@@ -7,209 +7,34 @@ var sectionId = section.attr("id");
 
 $(document).ready(function () {
 
-	// DEBUG SCRIPT
-
-	var adminLogin = $('.btn-submit#admin');
-
-	adminLogin.click(function() {
-		console.log("admin login");
-
-			let data = {};
-			data.username = "admin";
-			data.password = "password";
-			$.get("/api/find/", data, function(data){
-				// console.log (data, "data set");
-				 $('#app-content').html(data);
-      });
-		
-	});
-
-	// LOGIN
-
-	if (sectionId === "signup") {
-
-	$('.btn-submit#signup').click(function(evt) {
-		// var pkg = getFormData($(this));
-		// console.log(evt, "evt");
-		var data = {};
-		/*data.contentCategories = $(".form :input.active").map(function(){
-														    return $(this).val();
-														 }).get();*/
-		data.username = $('#username').val();
-		data.password = $('#password').val();
-		data.email = $('#email').val();
-
-		console.log(data);
-
-		if (!data.password || !data.username || !data.email) {
-			console.log ("empty fields");
-			  
-			} else {
-				
-
-				$.post("/api/create/",data, function(data){
-					// console.log(data);
-					console.log("trying to create player");
-            
-          });
-			}
-
-	});
+// HOMEPAGE
 
 
+// HIGH CHARTS -- DATA VISUALIZATIONS
 
 
+// PAPA PARSE -- CSV DATA 	
 
-}
-
-
-if (sectionId === "login") {
-
-	$('.btn-submit#login').click(function(evt) {
-		// var pkg = getFormData($(this));
-		// console.log(evt, "evt");
-		var data = {};
-		// var email = false;
-
-		data.username = $('#username').val();
-		data.password = $('#password').val();
-		// data.email = $('#email').val();
-
-		console.log(data);
-
-		if (!data.password || !data.username) {
-			console.log ("empty fields");
-			  
-			} else {
-				console.log("checking login info");
-
-				$.get("/api/find/", data, function(data){
-					// console.log (data, "data set");
-					 $('#app-content').html(data);
-          });
-			}
-
-	});
-
-	// Conversation Tool 1 -- name pending
-
-
-
-
-
-
-
-	
-
-	//Get form data - JR
-
-	function getFormData(submitElement) {
-
-			var pkg;
-
-			if(submitElement[0].dataset === undefined)
-				return undefined;
-			
-			try {
-				pkg = JSON.parse(submitElement[0].dataset.package);
-			}
-			catch(e) {
-				pkg = submitElement[0].dataset.package;
-			}
-
-			if($.isPlainObject(pkg)) {
-				$.each(Object.keys(pkg), function( key, value ) {
-
-					if(pkg[value] !== undefined)
-					  pkg[value] = $(pkg[value].toString()).val();
-
-				});
-			}
-			else if(!submitElement.is('button'))
-				pkg = $(pkg).val();
-
-			return pkg;
-
-		};
-
-
-
-
+// CSV File Upload Parse
+$('input[type=file]').parse({
+	config: {
+		// base config to use for each file
+	},
+	before: function(file, inputElem)
+	{
+		// executed before parsing each file begins;
+		// what you return here controls the flow
+	},
+	error: function(err, file, inputElem, reason)
+	{
+		// executed if an error occurs while loading the file,
+		// or if before callback aborted for some reason
+	},
+	complete: function()
+	{
+		// executed after all files are complete
 	}
-
-		//GooGle Maps
-    initialize = function() {
-
-    	console.log("initializing map");
-			var myCenter=new google.maps.LatLng(10, 20);
-			var marker=new google.maps.Marker({
-			    position:myCenter
-			});
-		  var mapProp = {
-		      center:myCenter,
-		      zoom: 13,
-		      draggable: false,
-		      scrollwheel: false,
-		      mapTypeId:google.maps.MapTypeId.ROADMAP
-		  };
-		  
-		  var map = new google.maps.Map(document.getElementById("map"), mapProp);
-		  console.log (map);
-		  // marker.setMap(map);
-		    
-		  // google.maps.event.addListener(marker, 'click', function() {
-		      
-		  //   infowindow.setContent(contentString);
-		  //   infowindow.open(map, marker);
-		    
-		  // }); 
-		}
-
-		$('#map-tab').on('click', function (e) {
-			var target = $(e.target).attr("href");
-					console.log(target);
-			  	// initMap();
-			  	console.log("YOU CLICKED ON A MAP TAB");
-			  	google.maps.event.trigger(map, 'initialize');
-					// map.setZoom( map.getZoom() );
-			});
-
-		// window.addEventListener('load',function(){
-  //     if(document.getElementById('map')){
-  //       google.load("maps", "3",{
-  //         callback:function(){
-  //            new google.maps.Map(document.getElementById('map'), {
-  //               center: new google.maps.LatLng(0,0),
-  //               zoom: 3
-  //             });
-  //         }
-  //       });     
-  //     }
-  //   },false);
-
-
-
-		// function makeMarker(options) { 
-		//   var pushPin = new google.maps.Marker({ map: map }); 
-		//   pushPin.setOptions(options); 
-
-		//   google.maps.event.addListener(pushPin, "click", function () { 
-		// 	  	infoWindow.setOptions(options); 
-		// 	  	infoWindow.open(map, pushPin); 
-		// 	});
-		//   markerBounds.extend(options.position); 
-		//   markerArray.push(pushPin);
-
-		//   return pushPin; 
-		// };
-		// google.maps.event.addListener(map, "click", function () {
-		//  infoWindow.close(); 
-	 //  }); 
-
-	 //      makeMarker({ title: "Test1", position: new google.maps.LatLng(10, 10), content: "Content1", icon: '' });
-	 //      makeMarker({ title: "Test2", position: new google.maps.LatLng(20, 20), content: "Content2", icon: '' });
-	 //      makeMarker({ title: "Test3", position: new google.maps.LatLng(30, 30), content: "Content3", icon: '' });
-	      
+});
 			
 });
 

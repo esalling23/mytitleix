@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-var Feed = keystone.list('Feed');
+var Data = keystone.list('DataSheet');
 // var base = require('templates/layouts/base.hbs')
  
 exports = module.exports = function(req, res) {
@@ -10,12 +10,13 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-    	var feedQuery = Feed.model.find({
+    	var dataQuery = Data.model.find({
             // 'enabled': true
         });
 
-        feedQuery.exec(function(err, resultFeeds) {
-        	locals.feeds = resultFeeds;
+        dataQuery.exec(function(err, resultDatas) {
+        	locals.datas = resultDatas;
+            console.log(resultDatas);
             
         	next();
         });

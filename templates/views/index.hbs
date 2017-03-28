@@ -1,14 +1,15 @@
 <div class="container app-container">
-	<h1 class="center">Reverse Washing History</h1>
+	<h1 class="center">My Title IX</h1>
 
-	<div id="app-content"> 
+	<div id="upload-content"> 
 
-		{{> nav }}
-
-		
-
+		<div className="upload-body">
+		    CSV File:<input type="file" id="csvFile" accept=".csv" name="csvFile"/>  
+		</div>
+		<div className="upload-footer">
+		    <button type="submit" name="submit" className="btn btn-create">Upload</button>
+		</div>
     
-
 	</div>
 
 </div>

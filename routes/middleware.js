@@ -1,5 +1,7 @@
 var _ = require('underscore'),
-    keystone = require('keystone');
+    keystone = require('keystone'), 
+    Link = keystone.list('Link'), 
+    MainNav = keystone.list('MainNav');
  
 /**
     Initialises the standard view locals.
@@ -16,6 +18,29 @@ exports.initLocals = function(req, res, next) {
     next();
     
 };
+
+// MAIN NAVIGATION
+exports.MainNav = function (req, res, next) {
+
+    var locals = res.locals;
+
+    var queryMainNav = MainNav.model.findOne({}, {}, {
+        sort: {
+            'createdAt': -1
+        }
+    })
+    .populate('links')
+    .populate('logo');
+
+    queryMainNav.exec(function(err, resultNav) {
+        if (err) throw err;
+
+        locals.mainNav = resultNav;
+        console.log(locals.MainNav);
+        next(err);
+    });
+
+}
  
 /**
     Inits the error handler functions into `res`
