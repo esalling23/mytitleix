@@ -5,8 +5,8 @@ exports = module.exports = function(done) {
     
     new User.model({
         username: "admin",
-        email: 'rwh.com',
-        password: 'rwh',
+        email: 'admin.com',
+        password: 'mytitleix',
         canAccessKeystone: true
     }).save(done());
     
