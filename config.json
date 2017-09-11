@@ -1,8 +1,7 @@
 {
-	"name": "MyTitleIX",
-	// "directory": "",
+	"name": "mytitleix",
 	"database": "mytitleix",
 	"admin_nav": { 
-									
+									"index": ["Index"]
 								}
 }

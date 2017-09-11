@@ -1,103 +1,47 @@
-$color-black: #000000;
-$color-gray: #999999;
-$color-gray-light: #cccccc;
-$color-gray-dark: #666666;
+@import "core/variables";
+@import "core/mixins";
+@import "core/functions";
+@import "core/fonts";
 
-$color-red: #C52C2F;
-$color-blue: #0066cc;
-$color-blue-dark: #000099;
-$color-blue-light: #66ccff;
-$color-green: #339966;
-$color-yellow: #ffff66;
 
-body, html {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-  padding: 0;
+@include font-face(Font-Name, 'https://path/to/cdn/font', null, null, eot woff ttf);
 
-  
+// Use for any elements hidden initilly
+.hidden {
+	visibility: hidden;
+}
+
+// Body
+.body {
+  background-color: #000;
+  color: #fff;
+  font-family: "HalisLight";
+}
+
+.desktop-only {
+	// Hide for mobile
+	@include mobile-only {
+		display: none;
+	}
+}
+.mobile-only {
+	// Hide for desktop
+	@include desktop-and-up {
+		display: none;
+	}
+}
+.buffer {
+		margin-top: 5%;	
+}
+
+.main {
 
 }
 
-#body {
-	background-color: $color-gray-dark;
-  color: white;
-  height: 100%;
-  width: 100%;
+.home {
 
-}
+	#title {
 
-.center {
-	text-align: center;
-}
-
-#app-content {
-	height: 100%;
-	#map { 
-			height: 200px;
-			width:200px;
-			overflow: visible;
-
-		}
 	}
 
-	.app-container {
-		height: 100%;
-
-
-		.red {
-			background-color: $color-red;
-		}
-
-		.error {
-			display: none;
-		}
-
-		.hidden {
-			display: none;
-			
-		}
-
-		.menu {
-			position: relative;
-			width: 60%;
-			margin: 0 auto;
-
-
-			#email {
-				display: none;
-			}
-
-			input {
-				display: block;
-				position: relative;
-				width: 100%;
-				border: 1px solid black;
-				
-				background-color: $color-red;
-
-				&.btn-submit {
-					margin: 0 auto;
-					position: relative;
-					background-color: $color-blue;
-				}
-			}
-		}
-
-		.profile {
-		height: 100%;
-
-			.tab-content {
-				height: 100%;
-			}
-
-			.tab-pane{
-				height: 100%;
-				width: 100%;
-			}
-
-			
-		}
-	
 }

@@ -1,0 +1,22 @@
+{
+  "name": "mytitleix",
+  "description": "",
+  "main": "app.js",
+  "version": "0.0.1",
+  "authors": [
+    "Erica Salling <erica.salling@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/esalling23/mytitleix",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}

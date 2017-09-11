@@ -1,79 +1,56 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
+		<title>The Uncertainty Dictionary</title>
+		<meta name="description" content="The Uncertainty Dictionary">
+		<meta name="author" content="Engagement Lab">
+		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Erica Game</title>		
-		<link rel="stylesheet" href="/styles/core.css">
-		<link rel="stylesheet" href="/styles/bootstrap.min.css">
-		<script data-main="../node-modules" src="/js/require.js"></script>
-		
+		{{!-- <meta name="theme-color" content="#78cbd1"> --}}
 
+		{{!-- Open Graph --}}
+		{{!-- <meta property="og:image" content="http://res.cloudinary.com/engagement-lab-home/image/upload/v1455896685/site/about/logo_color.png" /> --}}
+
+		{{!-- Load our CSS/docs --}}
+		{{> css environment=env}}
+		
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+		- only renders when user is logged in and admin--}}
+		{{!-- {{{isAdminEditorCSS user}}} --}}
+
+		{{!-- FontKit --}}
+		<script src="https://use.typekit.net/cau2rql.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
-	<body>
-		<div id="header">
+	
+	<body class="body">
 
-			{{> mainmenu}}
+		{{!-- {{> nav}} --}}
 
-		</div>
-		<div id="body">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
+		<!-- page wrapper start -->
+		<!-- ================ -->
+		<div class="page-wrapper">
+			
+			<!-- BODY CONTENT START -->
 			{{{body}}}
+						
+			{{!-- {{> footer}} --}}
 
-			<div class="hidden section-id" id="login"></div>
+			<!-- page-wrapper end -->
+			{{!-- {{#ifeq env "development"}} --}}
+				{{> script/development}}
+			{{!-- {{else}}
+				{{> script/production section=section}}
+			{{/ifeq}} --}}
+
+
+
+			{{{isAdminEditorJS user}}}
 		</div>
-		<div class="container">
-			<div id="footer">
-				
-			</div>
-		</div>
-
-		{{!-- Scripts --}}
-
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>  
-		<script src="/js/core.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/PapaParse-4.1.2/papaparse.min.js"></script>
-		{{!--<script src="https://www.google.com/jsapi?.js"></script> --}}
-
-
-		
-
-		{{> script/global }}
-
-		
-
-    
-
 
 	</body>
 </html>

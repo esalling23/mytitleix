@@ -1,0 +1,62 @@
+{
+  "apps" : [{
+    "name": "My Title IX",
+    "script": "server.js",
+    "env_production": {
+      "NODE_ENV": "production"
+    },
+    "env_staging": {
+      "NODE_ENV": "staging"
+    }
+  }],
+  "deploy" : {
+
+    "sdk-staging" : {
+      "user": "node",
+      "host": "138.197.93.245",
+      "repo": "https://github.com/esalling23/el-web-sdk.git",
+      "ref": "origin/master",
+      "path": "/srv/framework",
+      "pre-deploy-local" : "echo 'Cloning and running npm install. Be patient.'",
+      "post-deploy" : "npm install ; npm update ; grunt compile --sites=mytitleix --env production ; pm2 restart 'server' -- mytitleix --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "staging" : {
+      "user": "node",
+      "host": "138.197.93.245",
+      "repo": "https://github.com/esalling23/mytitleix.git",
+      "ref": "origin/master",
+      "path": "/srv/platform",
+      "pre-deploy-local" : "echo 'NPM linking mytitleix and restarting app.';",
+      "post-deploy" : "npm i ; cd /srv/framework/source/ ; grunt compile --sites=mytitleix --env production ; NODE_ENV=production pm2 restart server.js -- mytitleix --env production"
+    },
+
+    "sdk-production" : {
+      "user": "node",
+      "host": "138.197.93.245",
+      "repo": "https://github.com/esalling23/el-web-sdk.git",
+      "ref": "origin/master",
+      "path": "/srv/framework",
+      "pre-deploy-local" : "echo 'Cloning and running npm install. Be patient.'",
+      "post-deploy" : "npm install ; npm update ; grunt compile --sites=mytitleix --env production ; pm2 restart 'server' -- mytitleix --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "production" : {
+      "user": "node",
+      "host": "138.197.93.245",
+      "repo": "https://github.com/esalling23/mytitleix.git",
+      "ref": "origin/master",
+      "path": "/srv/platform",
+      "pre-deploy-local" : "echo 'NPM linking mytitleix and restarting app.';",
+      "post-deploy" : "npm i ; cd /srv/framework/source/ ; grunt compile --sites=mytitleix --env production ; NODE_ENV=production pm2 restart server.js -- mytitleix --env production"
+    }
+
+
+  }
+}

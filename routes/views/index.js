@@ -1,29 +1,60 @@
-var keystone = require('keystone');
-var Data = keystone.list('DataSheet');
-// var base = require('templates/layouts/base.hbs')
- 
-exports = module.exports = function(req, res) {
-    var view = new keystone.View(req, res);
-    var locals = res.locals;
+/**
+ * (Site name here)
+ * Developed by Engagement Lab, 2016
+ * ==============
+ * Index page view controller.
+ *
+ * Help: http://keystonejs.com/docs/getting-started/#routesviews-firstview
+ *
+ * @class Index
+ * @author 
+ *
+ * ==========
+ */
+var keystone = require('keystone'),
+    Index = keystone.list('Index'),
+    Item = keystone.list('Item'),
+    _ = require('underscore');
 
-    locals.section = 'home';
+exports = module.exports = function(req, res) {
+
+    var view = new keystone.View(req, res),
+        locals = res.locals;
+
+    // Init locals
+    locals.section = 'index';
 
     view.on('init', function(next) {
 
-    	var dataQuery = Data.model.find({
-            // 'enabled': true
+        var queryIndex = Index.model.findOne({}, {}, {
+            sort: {
+                'createdAt': -1
+            }
         });
+        queryIndex.exec(function(err, resultIndex) {
+            if (err) throw err;
 
-        dataQuery.exec(function(err, resultDatas) {
-        	locals.datas = resultDatas;
-            console.log(resultDatas);
-            
-        	next();
+            locals.index = resultIndex;
+
+            var queryItem = Item.model.find({}, {}, {
+                sort: {
+                    'createdAt': -1
+                }
+            });
+
+            queryItem.exec(function(err, result) {
+                if (err) throw err;
+
+                locals.items = result;
+                
+                next();
+
+            });
+
         });
-
-    	
     });
-    
-    view.render('index', {layout: 'base'});
-    
-}
+
+    // Render the view
+    view.render('index');
+
+};
