@@ -14,18 +14,15 @@ appStart = function(app) {
 module.exports = function(frameworkDir, shared) {
 
 	// Add main dependencies and EL web framework dependencies if not mounted with EL framework repo
-	if(!shared) {
-		require('app-module-path').addPath(__dirname + '/node_modules'); 
-		require('app-module-path').addPath(frameworkDir + '/node_modules'); 
-	}
+	require('app-module-path').addPath(frameworkDir + '/node_modules'); 
 	
 	// Obtain app root path and set as keystone's module root
 	var appRootPath = require('app-root-path').path;
 	var keystoneInst = require('keystone');	
 	keystoneInst.set('module root', appRootPath);
-	keystoneInst.set('cookie secret', '(your secret here)');
 	keystoneInst.set('wysiwyg additional buttons', 'blockquote');
-
+	keystoneInst.set('google api key', 'AIzaSyDdV3l0ZuqBKz0K359nlAobLfYClFc8pBs');
+	
 	return { 
 
 		keystone: keystoneInst,
