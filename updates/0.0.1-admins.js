@@ -9,6 +9,6 @@
 
 exports.create = {
 	User: [
-	  { 'name.first': 'Dev', 'name.last': 'User', email: 'user@elab.emerson.edu', password: 'engagement', isAdmin: true }
+	  { username: 'User', email: 'user@elab.emerson.edu', password: 'engagement', isAdmin: true }
 	]
 };

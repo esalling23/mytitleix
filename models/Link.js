@@ -23,7 +23,6 @@ var Link = new keystone.List('Link',
 	{
 		label: 'Links',
 		singular: 'Link',
-		track: true,
 		autokey: { path: 'key', from: 'name', unique: true }
 	});
 

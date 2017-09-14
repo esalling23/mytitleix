@@ -12,8 +12,8 @@
  * ==========
  */
 var keystone = require('keystone'),
-    Index = keystone.list('Index'),
-    Item = keystone.list('Item'),
+    // Index = keystone.list('Index'),
+    // Item = keystone.list('Item'),
     _ = require('underscore');
 
 exports = module.exports = function(req, res) {
@@ -26,32 +26,32 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        var queryIndex = Index.model.findOne({}, {}, {
-            sort: {
-                'createdAt': -1
-            }
-        });
-        queryIndex.exec(function(err, resultIndex) {
-            if (err) throw err;
+        // var queryIndex = Index.model.findOne({}, {}, {
+        //     sort: {
+        //         'createdAt': -1
+        //     }
+        // });
+        // queryIndex.exec(function(err, resultIndex) {
+        //     if (err) throw err;
 
-            locals.index = resultIndex;
+        //     locals.index = resultIndex;
 
-            var queryItem = Item.model.find({}, {}, {
-                sort: {
-                    'createdAt': -1
-                }
-            });
+        //     var queryItem = Item.model.find({}, {}, {
+        //         sort: {
+        //             'createdAt': -1
+        //         }
+        //     });
 
-            queryItem.exec(function(err, result) {
-                if (err) throw err;
+        //     queryItem.exec(function(err, result) {
+        //         if (err) throw err;
 
-                locals.items = result;
+        //         locals.items = result;
                 
                 next();
 
-            });
+        //     });
 
-        });
+        // });
     });
 
     // Render the view

@@ -4,7 +4,6 @@ var keystone = require('keystone'),
 var DataSheet = new keystone.List('DataSheet', {
 		label: 'Data Sheets',
 		singular: 'Data Sheet',
-		track: true,
 		// nodelete: true,
 		nocreate: false
 	});

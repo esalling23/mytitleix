@@ -10,7 +10,6 @@ var Image = new keystone.List('Image',
 	{
 		label: 'Images',
 		singular: 'Image',
-		track: true,
 		autokey: { path: 'key', from: 'name', unique: true }
 	});
 

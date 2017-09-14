@@ -23,7 +23,6 @@ var MainNav = new keystone.List('MainNav',
 	{
 		label: 'Main Navigation',
 		singular: 'Main Navigation',
-		track: true,
 		nodelete: true
 	});
 
