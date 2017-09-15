@@ -14,7 +14,12 @@
 <div class="container-fluid home">
 	<div class="row">
 
-	<h3>This is a page!</h3>
+		<h3>Search for your school</h3>
+
+    <select id="searchbar">
+        <option value="select">Search Your School</option>
+        {{#each school}}<option value="{{key}}">{{name}}</option>{{/each}}
+    </select>
 		
 	</div>
 
