@@ -1,0 +1,75 @@
+{{!< default}}
+$(function(){
+
+console.log('is this happening?');
+
+    if($('#{{key}}').css('display') == 'block') {
+
+        $('#{{key}}{{@index}}').highcharts({
+            chart: {
+        type: 'column'
+    },
+    title: {
+        text: '{{name}} Clery Act Report Data'
+    },
+    subtitle: {
+        text: 'Sexual Assault Reports from the Campus Safety and Security Data Tool<a href="https://www.bostonglobe.com/2016/12/23/table-reports-sexual-assault-new-england-colleges/BG53TpCamCzxeCUF7tixYN/story.html"></a>.'
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Number of Reports'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: false,
+                format: ''
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> Reports<br/>'
+    },
+
+    series: [{
+        name: '{{name}} Reports',
+        colorByPoint: false,
+        data: [
+        {{#each data}}
+        {
+            name: '{{data.drilldown}}',
+            y: {{data.num}},
+            drilldown: '{{data.drilldown}}'
+        }
+        {{#unless @last}},{{/unless}}{{/each}}]
+    }],
+            drilldown: {
+                series: [{
+                {{#each data}}
+                    name: 'Actual Reports vs. Expected Reports, {{data.drilldown}}',
+                    id: '{{data.drilldown}}',
+                    data: [
+                        [
+                            'Actual Reports',
+                            {{data.num}}
+                        ],
+                        [
+                            'Expected Reports',
+                            {{data.expected}}
+                        ]
+                    ]
+              }{{#unless @last}},{{/unless}}{{/each}}
+
+        });             
+    }
+});

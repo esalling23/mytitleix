@@ -2,17 +2,17 @@
  * (Site name here)
  * Developed by Engagement Lab, 2016
  * ==============
- * Index page view controller.
+ * School page view controller.
  *
  * Help: http://keystonejs.com/docs/getting-started/#routesviews-firstview
  *
- * @class Index
+ * @class School
  * @author 
  *
  * ==========
  */
 var keystone = require('keystone'),
-    // Index = keystone.list('Index'),
+    School = keystone.list('School'),
     // Item = keystone.list('Item'),
     _ = require('underscore');
 
@@ -26,35 +26,22 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        // var queryIndex = Index.model.findOne({}, {}, {
-        //     sort: {
-        //         'createdAt': -1
-        //     }
-        // });
-        // queryIndex.exec(function(err, resultIndex) {
-        //     if (err) throw err;
+        var querySchool = School.model.findOne({}, {}, {
+            sort: {
+                'createdAt': -1
+            }
+        });
+        querySchool.exec(function(err, resultSchool) {
+            if (err) throw err;
 
-        //     locals.index = resultIndex;
+            locals.school = resultSchool;
 
-        //     var queryItem = Item.model.find({}, {}, {
-        //         sort: {
-        //             'createdAt': -1
-        //         }
-        //     });
+            next();
 
-        //     queryItem.exec(function(err, result) {
-        //         if (err) throw err;
-
-        //         locals.items = result;
-                
-                next();
-
-        //     });
-
-        // });
+        });
     });
 
     // Render the view
-    view.render('index');
+    view.render('School');
 
 };
